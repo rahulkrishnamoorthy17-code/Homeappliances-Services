@@ -1,0 +1,199 @@
+
+/* VoltHome local-file-safe theme visibility override.
+   Light is the fallback whenever data-theme is missing. */
+:root,
+html[data-theme="light"]{
+  --vh-final-heading:#171225;
+  --vh-final-text:#433b50;
+  --vh-final-muted:#6d6477;
+  --vh-final-link:#5b21b6;
+  --vh-final-card:#ffffff;
+  --vh-final-card-border:#ded7e8;
+}
+html[data-theme="dark"]{
+  --vh-final-heading:#fffaff;
+  --vh-final-text:#eee8f5;
+  --vh-final-muted:#cfc5da;
+  --vh-final-link:#d8b4fe;
+  --vh-final-card:#171122;
+  --vh-final-card-border:rgba(196,181,253,.20);
+}
+
+/* LIGHT FALLBACK: works even when file:// blocks/localStorage delays theme JS. */
+html:not([data-theme="dark"]) body,
+html[data-theme="light"] body{
+  color:#433b50 !important;
+}
+html:not([data-theme="dark"]) main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat,.product-card-price),
+html[data-theme="light"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat,.product-card-price){
+  color:#171225 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:none !important;
+}
+html:not([data-theme="dark"]) main :is(p,li,label,small,.small,.lead,.section-subtitle,.product-section-subtitle,.text-muted),
+html[data-theme="light"] main :is(p,li,label,small,.small,.lead,.section-subtitle,.product-section-subtitle,.text-muted){
+  color:#5f566b !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:none !important;
+}
+html:not([data-theme="dark"]) main a:not(.btn),
+html[data-theme="light"] main a:not(.btn){color:#5b21b6 !important;}
+
+/* Center intro copy — exact area shown in screenshot. */
+html:not([data-theme="dark"]) .section-heading :is(h1,h2,h3,h4,h5,h6,.section-title),
+html:not([data-theme="dark"]) .text-center :is(h1,h2,h3,.section-title),
+html[data-theme="light"] .section-heading :is(h1,h2,h3,h4,h5,h6,.section-title),
+html[data-theme="light"] .text-center :is(h1,h2,h3,.section-title){color:#171225 !important;}
+html:not([data-theme="dark"]) .section-heading :is(p,.section-subtitle,.lead),
+html:not([data-theme="dark"]) .text-center :is(p,.section-subtitle,.lead),
+html[data-theme="light"] .section-heading :is(p,.section-subtitle,.lead),
+html[data-theme="light"] .text-center :is(p,.section-subtitle,.lead){color:#675e72 !important;}
+
+/* Light cards/surfaces carry dark ink. */
+html:not([data-theme="dark"]) main :is(.card,.cardx,.simple-product-card,.product-card-rich,.auth-card,.cart-panel,.cart-summary,.product-detail-media,.float-card,.story-panel,.experience-card,.pricing-card,.contact-card,.buying-guide,.turnaround-panel,.accordion-item,.modal-content,.bg-surface),
+html[data-theme="light"] main :is(.card,.cardx,.simple-product-card,.product-card-rich,.auth-card,.cart-panel,.cart-summary,.product-detail-media,.float-card,.story-panel,.experience-card,.pricing-card,.contact-card,.buying-guide,.turnaround-panel,.accordion-item,.modal-content,.bg-surface){
+  color:#2a2234 !important;
+}
+html:not([data-theme="dark"]) main :is(.card,.cardx,.simple-product-card,.product-card-rich,.auth-card,.cart-panel,.cart-summary,.product-detail-media,.float-card,.story-panel,.experience-card,.pricing-card,.contact-card,.buying-guide,.turnaround-panel,.accordion-item,.modal-content,.bg-surface) :is(h1,h2,h3,h4,h5,h6,strong,b,.fw-bold,.fw-semibold),
+html[data-theme="light"] main :is(.card,.cardx,.simple-product-card,.product-card-rich,.auth-card,.cart-panel,.cart-summary,.product-detail-media,.float-card,.story-panel,.experience-card,.pricing-card,.contact-card,.buying-guide,.turnaround-panel,.accordion-item,.modal-content,.bg-surface) :is(h1,h2,h3,h4,h5,h6,strong,b,.fw-bold,.fw-semibold){color:#21182d !important;}
+html:not([data-theme="dark"]) main :is(.card,.cardx,.simple-product-card,.product-card-rich,.auth-card,.cart-panel,.cart-summary,.product-detail-media,.float-card,.story-panel,.experience-card,.pricing-card,.contact-card,.buying-guide,.turnaround-panel,.accordion-item,.modal-content,.bg-surface) :is(p,small,.small,.text-muted,.lead),
+html[data-theme="light"] main :is(.card,.cardx,.simple-product-card,.product-card-rich,.auth-card,.cart-panel,.cart-summary,.product-detail-media,.float-card,.story-panel,.experience-card,.pricing-card,.contact-card,.buying-guide,.turnaround-panel,.accordion-item,.modal-content,.bg-surface) :is(p,small,.small,.text-muted,.lead){color:#665d70 !important;}
+
+/* Dark mode is explicit and independent. */
+html[data-theme="dark"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat,.product-card-price){color:#fffaff !important;opacity:1 !important;visibility:visible !important;}
+html[data-theme="dark"] main :is(p,li,label,small,.small,.lead,.section-subtitle,.product-section-subtitle,.text-muted){color:#cfc5da !important;opacity:1 !important;visibility:visible !important;}
+html[data-theme="dark"] main a:not(.btn){color:#d8b4fe !important;}
+
+/* Keep intentionally dark promo/nav/footer surfaces readable in both modes. */
+:is(.navbar,.footer,.offer,.dash-side) :is(h1,h2,h3,h4,h5,h6,p,span,small,strong,b,a,.text-muted){color:#f5effb !important;}
+.navbar .nav-link,.navbar .nav-auth-link,.navbar-brand{color:#f6f2fb !important;}
+.navbar .nav-link:hover,.navbar .nav-link.active,.navbar .nav-auth-link:hover{color:#f0abfc !important;}
+
+/* Forms / tables. */
+html:not([data-theme="dark"]) :is(.form-control,.form-select,textarea,input),
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input){background:#fff !important;color:#2d2536 !important;border-color:#d8d0e2 !important;}
+html:not([data-theme="dark"]) :is(.form-control,.form-select,textarea,input)::placeholder,
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input)::placeholder{color:#81788b !important;opacity:1 !important;}
+html:not([data-theme="dark"]) .table,html[data-theme="light"] .table{--bs-table-color:#332b3c !important;}
+html[data-theme="dark"] .table{--bs-table-color:#eee8f5 !important;}
+
+/* Reveal animation must never hide readable content. */
+.reveal,.reveal-up,.reveal-left,.reveal-right,.vh-animate,.vh-animate-left,.vh-animate-right,[data-reveal],[data-animate]{opacity:1 !important;visibility:visible !important;}
+
+/* ===== One Service Partner full size image fix ===== */
+.service-partner-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  border-radius: 24px !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12) !important;
+  display: block !important;
+}
+
+/* ===== Timing fonts & Maintenance page countdown visibility fix ===== */
+.maintenance-countdown .countdown-box {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.1rem 0.6rem !important;
+  border-radius: 20px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+html:not([data-theme="dark"]) .maintenance-countdown .countdown-box,
+html[data-theme="light"] .maintenance-countdown .countdown-box {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(109, 40, 217, 0.22) !important;
+  box-shadow: 0 12px 30px rgba(40, 22, 74, 0.08) !important;
+}
+html:not([data-theme="dark"]) .maintenance-countdown .countdown-box strong,
+html[data-theme="light"] .maintenance-countdown .countdown-box strong {
+  color: #4c1d95 !important;
+  -webkit-text-fill-color: #4c1d95 !important;
+  font-size: clamp(2rem, 3.5vw, 2.6rem) !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  margin-bottom: 0.25rem !important;
+}
+html:not([data-theme="dark"]) .maintenance-countdown .countdown-box span,
+html[data-theme="light"] .maintenance-countdown .countdown-box span {
+  color: #6d28d9 !important;
+  -webkit-text-fill-color: #6d28d9 !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+html[data-theme="dark"] .maintenance-countdown .countdown-box {
+  background: rgba(23, 14, 38, 0.94) !important;
+  border: 1px solid rgba(216, 180, 254, 0.3) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+}
+html[data-theme="dark"] .maintenance-countdown .countdown-box strong {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 0 14px rgba(192, 132, 252, 0.6) !important;
+  font-size: clamp(2rem, 3.5vw, 2.6rem) !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  margin-bottom: 0.25rem !important;
+}
+html[data-theme="dark"] .maintenance-countdown .countdown-box span {
+  color: #e9d5ff !important;
+  -webkit-text-fill-color: #e9d5ff !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+/* Service turnaround timing fonts contrast */
+.turnaround-grid strong {
+  font-size: clamp(1.4rem, 2.5vw, 2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+html:not([data-theme="dark"]) .turnaround-grid strong,
+html[data-theme="light"] .turnaround-grid strong {
+  color: #4c1d95 !important;
+  -webkit-text-fill-color: #4c1d95 !important;
+}
+html[data-theme="dark"] .turnaround-grid strong {
+  color: #f3e8ff !important;
+  -webkit-text-fill-color: #f3e8ff !important;
+}
+html:not([data-theme="dark"]) .turnaround-grid span,
+html[data-theme="light"] .turnaround-grid span {
+  color: #584d66 !important;
+  -webkit-text-fill-color: #584d66 !important;
+  font-weight: 600 !important;
+}
+html[data-theme="dark"] .turnaround-grid span {
+  color: #d8b4fe !important;
+  -webkit-text-fill-color: #d8b4fe !important;
+  font-weight: 600 !important;
+}
+
+/* Clear background visibility with strict contrast */
+body {
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(245, 243, 250, 0.55)),
+    url('../images/site-purple-background.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+html[data-theme="dark"] body {
+  background-image:
+    linear-gradient(180deg, rgba(8, 5, 14, 0.55), rgba(12, 8, 20, 0.65)),
+    url('../images/site-purple-background.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
