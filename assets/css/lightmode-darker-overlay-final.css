@@ -1,0 +1,87 @@
+/* FINAL LIGHT MODE TUNING - slightly darker white with soft lavender/grey overlay */
+html[data-theme="light"] body {
+  background-color:#ececf8 !important;
+  background-image:
+    radial-gradient(ellipse 52% 34% at 14% 4%, rgba(150,120,220,.08), transparent 72%),
+    radial-gradient(ellipse 50% 32% at 88% 7%, rgba(190,150,215,.07), transparent 72%),
+    linear-gradient(180deg,#f4f3fb 0%,#ececf7 42%,#e9eaf5 72%,#efeff8 100%) !important;
+  color:#201a2a !important;
+}
+html[data-theme="light"] body::before,
+html[data-theme="light"] body::after { content:none !important; display:none !important; }
+
+html[data-theme="light"] .navbar,
+html[data-theme="light"] .navbar-premium-animated {
+  background:linear-gradient(90deg,#f3eff8 0%,#f7f5fa 50%,#f4eff7 100%) !important;
+  border-bottom:1px solid rgba(70,58,92,.12) !important;
+  box-shadow:0 7px 24px rgba(55,45,75,.07) !important;
+  animation:none !important;
+}
+html[data-theme="light"] .navbar :is(.navbar-brand,.nav-link,.nav-auth-link) {
+  color:#191321 !important; -webkit-text-fill-color:#191321 !important;
+}
+html[data-theme="light"] .navbar .nav-link:is(:hover,.active) {
+  color:#8b4df6 !important; -webkit-text-fill-color:#8b4df6 !important;
+}
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle,.btn-outline-secondary) {
+  background:rgba(248,247,251,.98) !important;
+  color:#282033 !important;
+  border-color:#d6d0df !important;
+}
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle,.btn-outline-secondary) :is(i,span) {
+  color:#282033 !important; -webkit-text-fill-color:#282033 !important; opacity:1 !important;
+}
+html[data-theme="light"] .navbar .dropdown-menu {
+  background:#f9f8fb !important; border:1px solid #d9d3e2 !important;
+  box-shadow:0 16px 38px rgba(42,30,65,.13) !important;
+}
+html[data-theme="light"] .navbar .dropdown-item { color:#211a2c !important; -webkit-text-fill-color:#211a2c !important; }
+html[data-theme="light"] .navbar .dropdown-item:hover { background:#eeeaf8 !important; color:#7c3aed !important; }
+
+html[data-theme="light"] .brand-strip { background:#f3f1f6 !important; border-color:#d9d4e0 !important; }
+html[data-theme="light"] .brand-pill { background:#f9f8fb !important; border-color:#d5cfde !important; color:#50485b !important; }
+
+html[data-theme="light"] .page-index .home-products-simple {
+  background:
+    radial-gradient(circle at 50% 18%,rgba(255,255,255,.22),transparent 42%),
+    linear-gradient(180deg,#e9e9f5 0%,#e6e7f2 100%) !important;
+}
+html[data-theme="light"] .page-index .simple-product-card,
+html[data-theme="light"] :is(.card,.cardx,.pricing-card,.contact-card,.story-panel,.experience-card,.buying-guide,.turnaround-panel,.accordion-item,.auth-card,.cart-panel,.cart-summary,.float-card) {
+  background:rgba(248,247,251,.98) !important;
+  border-color:#d7d2df !important;
+  box-shadow:0 14px 36px rgba(47,40,65,.08) !important;
+}
+html[data-theme="light"] .page-index main > section:not(.brand-strip):not(.home-products-simple):not(.offer) {
+  background-color:rgba(239,239,247,.70) !important;
+}
+html[data-theme="light"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat) {
+  color:#191321 !important; -webkit-text-fill-color:#191321 !important; opacity:1 !important;
+}
+html[data-theme="light"] main :is(p,li,label,small,.lead,.text-muted,.section-subtitle,.product-section-subtitle) {
+  color:#57505f !important; -webkit-text-fill-color:#57505f !important; opacity:1 !important;
+}
+
+/* Promise card numbering including 01 */
+html[data-theme="light"] .page-index .experience-card > span {
+  display:block !important; visibility:visible !important; opacity:1 !important;
+  color:#726083 !important; -webkit-text-fill-color:#726083 !important;
+}
+
+/* Intentional dark CTA panels */
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) {
+  background:linear-gradient(135deg,#10284a,#1c3f70) !important;
+}
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(h1,h2,h3,h4,h5,h6,.section-title,strong,b) {
+  color:#fff !important; -webkit-text-fill-color:#fff !important;
+}
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(p,.lead,.text-muted,small,.small) {
+  color:#edf2fb !important; -webkit-text-fill-color:#edf2fb !important; opacity:1 !important;
+}
+
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input) {
+  background:#f8f7fa !important; color:#241e2b !important; border-color:#d5d0dc !important;
+}
+html[data-theme="light"] :is(.form-control,textarea,input)::placeholder { color:#77707f !important; opacity:1 !important; }
+
+@media (max-width:991.98px){ html[data-theme="light"] body{ background-attachment:scroll !important; } }

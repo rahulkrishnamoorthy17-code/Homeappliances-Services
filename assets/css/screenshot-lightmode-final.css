@@ -1,0 +1,190 @@
+
+/* ============================================================
+   VOLTHOME — FINAL SCREENSHOT-MATCH LIGHT MODE
+   Target: soft pale lavender / off-white background shown by user.
+   Dark mode, functionality, content, routing, and responsiveness untouched.
+   ============================================================ */
+
+html[data-theme="light"] {
+  --bg: #f2f2ff !important;
+  --surface: #ffffff !important;
+  --surface2: #f7f6ff !important;
+  --text: #171224 !important;
+  --muted: #625b6e !important;
+  --line: #ddd9e9 !important;
+}
+
+/* MAIN PAGE BACKGROUND — exactly the requested soft lavender/off-white feel */
+html[data-theme="light"] body {
+  background-color: #f2f2ff !important;
+  background-image:
+    radial-gradient(circle at 14% 0%, rgba(156, 126, 255, .055), transparent 34%),
+    radial-gradient(circle at 88% 2%, rgba(219, 164, 240, .045), transparent 30%),
+    linear-gradient(180deg, #faf9ff 0%, #f5f4ff 20%, #f1f1ff 55%, #f3f3ff 100%) !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: 100% 100% !important;
+  background-attachment: fixed !important;
+  color: #171224 !important;
+}
+
+/* Kill old overlays/background images that made light mode dull/grey */
+html[data-theme="light"] body::before,
+html[data-theme="light"] body::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+html[data-theme="light"] :is(main,.site-main,.page-main,.hero,.section,.section-sm,.product-detail-hero,.auth-wrap) {
+  background-image: none !important;
+}
+
+/* NAVBAR — clean light screenshot look */
+html[data-theme="light"] .navbar,
+html[data-theme="light"] .navbar-premium-animated {
+  background: linear-gradient(90deg, #faf8ff 0%, #ffffff 50%, #fff9fd 100%) !important;
+  border-bottom: 1px solid #ece8f3 !important;
+  box-shadow: 0 5px 18px rgba(54, 40, 80, .045) !important;
+  animation: none !important;
+}
+
+html[data-theme="light"] .navbar :is(.navbar-brand,.nav-link,.nav-auth-link) {
+  color: #171224 !important;
+  -webkit-text-fill-color: #171224 !important;
+}
+
+html[data-theme="light"] .navbar .nav-link:is(:hover,.active) {
+  color: #8b5cf6 !important;
+  -webkit-text-fill-color: #8b5cf6 !important;
+}
+
+/* NAVBAR ICON CONTROLS */
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle,.btn-outline-secondary) {
+  background: #ffffff !important;
+  color: #282033 !important;
+  border-color: #ddd8e9 !important;
+}
+
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle,.btn-outline-secondary) :is(i,span,svg) {
+  color: #282033 !important;
+  -webkit-text-fill-color: #282033 !important;
+  opacity: 1 !important;
+}
+
+/* HOME DROPDOWN */
+html[data-theme="light"] .navbar .dropdown-menu {
+  background: #ffffff !important;
+  border: 1px solid #e3deed !important;
+  box-shadow: 0 16px 38px rgba(42, 30, 65, .12) !important;
+}
+html[data-theme="light"] .navbar .dropdown-item {
+  color: #211a2c !important;
+  -webkit-text-fill-color: #211a2c !important;
+}
+html[data-theme="light"] .navbar .dropdown-item:hover {
+  background: #f4f1ff !important;
+  color: #7c3aed !important;
+}
+
+/* BRAND FILTER STRIP — white separator as in screenshot */
+html[data-theme="light"] .brand-strip {
+  background: #ffffff !important;
+  border-top: 1px solid #efedf5 !important;
+  border-bottom: 1px solid #e7e3f0 !important;
+}
+
+html[data-theme="light"] .brand-pill {
+  background: #ffffff !important;
+  color: #5c5667 !important;
+  border-color: #dfdaea !important;
+  box-shadow: 0 6px 18px rgba(70, 55, 100, .035) !important;
+}
+
+/* FEATURED PRODUCTS — screenshot's pale lavender block */
+html[data-theme="light"] .page-index .home-products-simple {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,255,255,.45), transparent 44%),
+    linear-gradient(180deg, #f1f1ff 0%, #f0f1ff 100%) !important;
+  border: 0 !important;
+}
+
+html[data-theme="light"] .page-index .home-products-simple :is(h1,h2,h3,h4,h5,.section-title) {
+  color: #171224 !important;
+  -webkit-text-fill-color: #171224 !important;
+  text-shadow: none !important;
+}
+
+html[data-theme="light"] .page-index .home-products-simple :is(p,.section-subtitle,.product-section-subtitle,.text-muted) {
+  color: #5f5969 !important;
+  -webkit-text-fill-color: #5f5969 !important;
+}
+
+/* PRODUCT / GENERAL CARDS */
+html[data-theme="light"] :is(
+  .simple-product-card,.card,.cardx,.pricing-card,.contact-card,.story-panel,
+  .experience-card,.buying-guide,.turnaround-panel,.accordion-item,
+  .auth-card,.cart-panel,.cart-summary,.float-card
+) {
+  background: rgba(255,255,255,.97) !important;
+  border-color: #e2ddeb !important;
+  box-shadow: 0 13px 34px rgba(60,45,90,.065) !important;
+}
+
+/* KEEP NORMAL TEXT DARK/READABLE */
+html[data-theme="light"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat) {
+  color: #171224 !important;
+  -webkit-text-fill-color: #171224 !important;
+  opacity: 1 !important;
+}
+html[data-theme="light"] main :is(p,li,label,small,.lead,.text-muted,.section-subtitle,.product-section-subtitle) {
+  color: #625b6e !important;
+  -webkit-text-fill-color: #625b6e !important;
+  opacity: 1 !important;
+}
+
+/* PROMISE CARD NUMBERS */
+html[data-theme="light"] .page-index .experience-card > span {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #7567a0 !important;
+  -webkit-text-fill-color: #7567a0 !important;
+}
+
+/* INTENTIONALLY DARK CTA PANELS */
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) {
+  background: linear-gradient(135deg,#10284a,#1c3f70) !important;
+}
+
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review)
+:is(h1,h2,h3,h4,h5,h6,.section-title,strong,b) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review)
+:is(p,.lead,.text-muted,small,.small) {
+  color: #edf2fb !important;
+  -webkit-text-fill-color: #edf2fb !important;
+  opacity: 1 !important;
+}
+
+/* FORMS */
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input) {
+  background: #ffffff !important;
+  color: #241c2f !important;
+  border-color: #ddd7e7 !important;
+}
+
+html[data-theme="light"] :is(.form-control,textarea,input)::placeholder {
+  color: #827a8d !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 991.98px) {
+  html[data-theme="light"] body {
+    background-attachment: scroll !important;
+  }
+}

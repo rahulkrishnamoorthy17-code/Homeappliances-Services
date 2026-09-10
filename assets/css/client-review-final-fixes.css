@@ -1,0 +1,145 @@
+/* ===== Client review fixes — 2026-09-10 ===== */
+/* Typography: cleaner scale + requested weights */
+h1,h2,h3,.display,.section-title{font-weight:600!important}
+h4,h5,h6{font-weight:600!important}
+p,.lead,li,label,small,.text-muted,.section-subtitle,.product-section-subtitle{font-weight:400!important}
+strong,b,.fw-bold,.fw-semibold{font-weight:600!important}
+.section-title{font-size:clamp(1.8rem,3.2vw,2.65rem)!important;line-height:1.15!important}
+.hero h1,.display{font-size:clamp(2.2rem,4.7vw,4.15rem)!important;line-height:1.05!important}
+.hero .lead{font-size:clamp(1rem,1.5vw,1.2rem)!important}
+
+/* Light mode must look genuinely light/fresh; header specifically white */
+html:not([data-theme="dark"]) body{background:#f7f9fc!important;color:#1f2937!important}
+html:not([data-theme="dark"]) .navbar{background:#ffffff!important;border-bottom:1px solid #e6eaf0!important;box-shadow:0 8px 28px rgba(15,23,42,.06)!important}
+html:not([data-theme="dark"]) .navbar :is(.navbar-brand,.nav-link,.nav-auth-link){color:#1b2434!important;-webkit-text-fill-color:#1b2434!important}
+html:not([data-theme="dark"]) .navbar .btn-soft{background:#f5f7fb!important;color:#293445!important;border-color:#dfe5ec!important}
+html:not([data-theme="dark"]) main .section:not(.offer){background-color:transparent}
+
+/* Make deliberate dark/blue CTA panels readable in LIGHT and DARK mode */
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note) :is(h1,h2,h3,h4,h5,h6,.display,.section-title,strong,b){color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note) :is(p,.lead,.text-muted,.text-white-50,small){color:#e8eef8!important;-webkit-text-fill-color:#e8eef8!important;opacity:1!important}
+html:not([data-theme="dark"]) .page-index .experience-card:first-child,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(2){background:#fff!important;color:#1f2937!important}
+html:not([data-theme="dark"]) .page-index .experience-card :is(h4,p){color:#253044!important;-webkit-text-fill-color:#253044!important}
+
+/* Home journey / review cards */
+.home-journey{padding-top:2.2rem!important;padding-bottom:2.2rem!important}
+.home-journey-card{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;border-radius:20px;background:var(--surface);border:1px solid var(--line);height:100%;box-shadow:0 12px 34px rgba(15,23,42,.06)}
+.home-journey-card .iconbox{flex:0 0 auto}
+.home-journey-card h4{margin:0 0 .35rem;font-size:1.08rem}
+.home-journey-card p{margin:0;color:var(--muted)}
+.home-journey-card a{margin-top:.55rem;display:inline-flex;font-weight:600;text-decoration:none;color:var(--primary)}
+.promo-mini{height:100%;padding:1.25rem;border-radius:20px;background:linear-gradient(145deg,var(--surface),var(--soft));border:1px solid var(--line)}
+.promo-mini strong{display:block;margin-bottom:.25rem}
+
+/* Remove excessive empty space in VoltHome promise experience cards */
+.page-index .experience-card{min-height:0!important;height:auto!important;padding:1.35rem!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important}
+.page-index .experience-card>span{font-size:2rem!important;line-height:1!important;margin-bottom:.5rem}
+.page-index .experience-card h4{margin-bottom:.4rem!important}
+.page-index .experience-card p{margin:0!important}
+
+/* About testimonial identity row with image */
+.testimonial-person{display:flex;align-items:center;gap:.8rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
+.testimonial-person img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid color-mix(in srgb,var(--primary) 35%,var(--line));flex:0 0 50px}
+.testimonial-person .person-copy{display:grid;line-height:1.3}
+
+/* Pricing: hero image and copy combined into one meaningful visual */
+.page-pricing .pricing-hero-review{position:relative;min-height:430px;border-radius:28px;overflow:hidden;display:flex;align-items:center;padding:clamp(1.5rem,4vw,3.5rem);isolation:isolate;box-shadow:var(--shadow)}
+.page-pricing .pricing-hero-review:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,17,31,.9) 0%,rgba(8,17,31,.72) 48%,rgba(8,17,31,.20) 100%);z-index:-1}
+.page-pricing .pricing-hero-review img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.page-pricing .pricing-hero-copy{max-width:620px;color:#fff}
+.page-pricing .pricing-hero-copy :is(h1,p){color:#fff!important;-webkit-text-fill-color:#fff!important}
+.page-pricing .pricing-hero-copy p{color:#e5edf8!important;-webkit-text-fill-color:#e5edf8!important}
+.page-pricing .row.g-4.justify-content-center>.col-md-6{display:flex}
+.page-pricing .row.g-4.justify-content-center .cardx{display:flex!important;flex-direction:column!important;width:100%}
+.page-pricing .row.g-4.justify-content-center .cardx ul{flex:1}
+.page-pricing .row.g-4.justify-content-center .cardx>.btn{min-height:46px!important;margin-top:auto!important;display:flex!important;align-items:center!important;justify-content:center!important}
+
+/* Home preview should be visually distinct from full Products page */
+.page-index .home-products-simple{background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--soft) 45%,transparent),transparent)}
+.page-index .home-products-simple .simple-product-card{border-radius:20px!important;padding:.7rem!important}
+.page-index .home-products-simple .simple-product-media{height:135px!important;border-radius:14px!important}
+.page-index .home-products-simple .simple-product-card h5{font-size:.95rem!important;margin:.65rem .3rem .2rem!important}
+
+/* Responsive finishing */
+@media(max-width:991.98px){
+  .section{padding:3.8rem 0!important}
+  .page-pricing .pricing-hero-review{min-height:390px}
+}
+@media(max-width:575.98px){
+  .section{padding:3rem 0!important}
+  .section-title{font-size:clamp(1.65rem,8vw,2.15rem)!important}
+  .hero h1,.display{font-size:clamp(2rem,11vw,2.8rem)!important}
+  .page-pricing .pricing-hero-review{min-height:440px;padding:1.4rem}
+  .page-pricing .pricing-hero-review:before{background:linear-gradient(180deg,rgba(8,17,31,.88),rgba(8,17,31,.68))}
+  .home-journey-card{padding:1rem}
+}
+
+
+/* ===== Content fill enhancements — 2026-09-10 ===== */
+.page-index .experience-card{gap:.75rem!important}
+.page-index .experience-card .experience-points{margin:0!important;padding-left:1.05rem!important;display:grid;gap:.35rem}
+.page-index .experience-card .experience-points li{margin:0!important;color:inherit!important;opacity:.88!important;font-size:.96rem!important;line-height:1.5!important}
+.page-index .experience-card .experience-meta{margin-top:auto!important;display:flex!important;flex-wrap:wrap!important;gap:.5rem!important;padding-top:.15rem}
+.page-index .experience-card .experience-meta span{display:inline-flex!important;align-items:center!important;padding:.38rem .7rem!important;border-radius:999px!important;font-size:.78rem!important;font-weight:600!important;letter-spacing:.01em!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.14)!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.page-index .experience-card:nth-child(2) .experience-meta span,
+.page-index .experience-card:nth-child(3) .experience-meta span{background:rgba(124,58,237,.08)!important;border:1px solid rgba(124,58,237,.18)!important;color:#32254e!important;-webkit-text-fill-color:#32254e!important}
+html[data-theme="dark"] .page-index .experience-card:nth-child(2) .experience-meta span,
+html[data-theme="dark"] .page-index .experience-card:nth-child(3) .experience-meta span{background:rgba(168,85,247,.1)!important;border:1px solid rgba(168,85,247,.22)!important;color:#f5eefe!important;-webkit-text-fill-color:#f5eefe!important}
+
+.page-about .testimonial-card-fill{display:flex!important;flex-direction:column!important;gap:.85rem!important}
+.page-about .testimonial-card-fill > p{margin-bottom:0!important}
+.page-about .testimonial-extra{color:var(--muted)!important;-webkit-text-fill-color:var(--muted)!important;line-height:1.6!important;font-size:.97rem!important}
+.page-about .testimonial-tags{display:flex!important;flex-wrap:wrap!important;gap:.55rem!important}
+.page-about .testimonial-tags span{display:inline-flex!important;align-items:center!important;padding:.38rem .72rem!important;border-radius:999px!important;background:rgba(124,58,237,.09)!important;border:1px solid rgba(124,58,237,.2)!important;color:var(--text)!important;-webkit-text-fill-color:var(--text)!important;font-size:.8rem!important;font-weight:600!important}
+.page-about .testimonial-person{margin-top:auto!important}
+.page-about .testimonial-person img{width:58px!important;height:58px!important;flex:0 0 58px!important;object-fit:cover!important;object-position:center!important}
+html[data-theme="dark"] .page-about .testimonial-tags span{background:rgba(168,85,247,.12)!important;border-color:rgba(168,85,247,.24)!important;color:#f5edff!important;-webkit-text-fill-color:#f5edff!important}
+
+
+/* Light mode visibility fix for dark experience cards 01 and 04 */
+html[data-theme="light"] .page-index .experience-card:nth-child(1) .experience-points li,
+html[data-theme="light"] .page-index .experience-card:nth-child(4) .experience-points li,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(1) .experience-points li,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(4) .experience-points li{
+  color:#eef4ff!important;
+  -webkit-text-fill-color:#eef4ff!important;
+  opacity:1!important;
+}
+html[data-theme="light"] .page-index .experience-card:nth-child(1) .experience-points li::marker,
+html[data-theme="light"] .page-index .experience-card:nth-child(4) .experience-points li::marker,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(1) .experience-points li::marker,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(4) .experience-points li::marker{
+  color:#b9d6ff!important;
+}
+html[data-theme="light"] .page-index .experience-card:nth-child(1) .experience-meta span,
+html[data-theme="light"] .page-index .experience-card:nth-child(4) .experience-meta span,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(1) .experience-meta span,
+html:not([data-theme="dark"]) .page-index .experience-card:nth-child(4) .experience-meta span{
+  background:rgba(255,255,255,.10)!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+}
+
+
+/* ===== Service detail routing/content/image refinements — 2026-09-10 ===== */
+.page-service-details .service-detail-main-image{
+  width:100%!important;
+  height:clamp(360px,42vw,520px)!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:26px!important;
+  padding:0!important;
+  background:linear-gradient(145deg,#0b1220,#173a5e)!important;
+  box-shadow:0 24px 60px rgba(15,23,42,.16)!important;
+}
+.page-service-details .row.g-3.mt-1>.col-sm-6{display:flex!important}
+.page-service-details .row.g-3.mt-1 .cardx{width:100%!important;display:flex!important;align-items:center!important;min-height:76px!important}
+@media(max-width:991.98px){
+  .page-service-details .service-detail-main-image{height:clamp(320px,55vw,440px)!important}
+}
+@media(max-width:575.98px){
+  .page-service-details .service-detail-main-image{height:280px!important;border-radius:20px!important}
+}
