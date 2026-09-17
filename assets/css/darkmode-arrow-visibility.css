@@ -1,0 +1,18 @@
+/* VoltHome: dark-mode arrow visibility fix */
+html[data-theme="dark"] .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23F6E8FF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.35' d='m2.25 5.25 5.75 5.5 5.75-5.5'/%3E%3C/svg%3E") !important;
+  background-size: 1.05rem 1.05rem !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 4px rgba(217, 70, 239, .8)) drop-shadow(0 0 1px rgba(255,255,255,.65));
+}
+html[data-theme="dark"] .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23F0ABFC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.35' d='m2.25 5.25 5.75 5.5 5.75-5.5'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 5px rgba(192, 132, 252, .95)) drop-shadow(0 0 1px rgba(255,255,255,.75));
+}
+html[data-theme="dark"] .navbar .dropdown-toggle::after {
+  color: #F5D0FE !important;
+  border-top-color: #F5D0FE !important;
+  opacity: 1 !important;
+}

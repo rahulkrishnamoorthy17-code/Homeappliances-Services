@@ -1,0 +1,291 @@
+/* ============================================================
+   VOLTHOME — REFERENCE LIGHT MODE BACKGROUND
+   Matches the supplied screenshot: clean off-white / pale lavender
+   canvas with soft white surfaces. Dark mode is intentionally untouched.
+   Loaded last on every HTML page.
+   ============================================================ */
+
+html[data-theme="light"] {
+  --bg: #f2f2ff !important;
+  --surface: #ffffff !important;
+  --surface2: #f7f7ff !important;
+  --soft: #f6f4ff !important;
+  --text: #181225 !important;
+  --muted: #625b6e !important;
+  --line: #e2deec !important;
+  color-scheme: light;
+}
+
+/* Main site canvas — intentionally very subtle, like the reference image. */
+html[data-theme="light"] body,
+html:not([data-theme="dark"]) body {
+  background-color: #f2f2ff !important;
+  background-image:
+    radial-gradient(circle at 50% 12%, rgba(255,255,255,.72) 0, rgba(255,255,255,.34) 24%, transparent 48%),
+    linear-gradient(180deg, #fafaff 0%, #f6f6ff 17%, #f1f1ff 52%, #f3f3ff 100%) !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: 100% 100% !important;
+  background-attachment: fixed !important;
+  color: #181225 !important;
+}
+
+/* Remove old photographic / purple mesh layers in light mode only. */
+html[data-theme="light"] body::before,
+html[data-theme="light"] body::after,
+html:not([data-theme="dark"]) body::before,
+html:not([data-theme="dark"]) body::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+/* Let the same pale canvas run through every page and normal section. */
+html[data-theme="light"] :is(
+  main, .site-main, .page-main, .hero, .section, .section-sm,
+  .product-catalogue-section, .product-detail-hero, .auth-wrap,
+  .premium-story, .home-journey, .cart-hero, .vh-faq-section
+),
+html:not([data-theme="dark"]) :is(
+  main, .site-main, .page-main, .hero, .section, .section-sm,
+  .product-catalogue-section, .product-detail-hero, .auth-wrap,
+  .premium-story, .home-journey, .cart-hero, .vh-faq-section
+) {
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Reference-style featured area: a clean pale-lavender block. */
+html[data-theme="light"] .home-products-simple,
+html:not([data-theme="dark"]) .home-products-simple {
+  background:
+    radial-gradient(circle at 50% 16%, rgba(255,255,255,.46), transparent 43%),
+    linear-gradient(180deg, rgba(241,241,255,.98) 0%, rgba(240,241,255,.98) 100%) !important;
+  border-top: 1px solid rgba(222,219,237,.52) !important;
+  border-bottom: 1px solid rgba(222,219,237,.42) !important;
+}
+
+/* White separator strip exactly like the brand row in the reference. */
+html[data-theme="light"] .brand-strip,
+html:not([data-theme="dark"]) .brand-strip {
+  background: rgba(255,255,255,.98) !important;
+  border-top: 1px solid #eeebf4 !important;
+  border-bottom: 1px solid #e6e2ee !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="light"] .brand-pill,
+html:not([data-theme="dark"]) .brand-pill {
+  background: #ffffff !important;
+  color: #5b5565 !important;
+  border-color: #dfd9e9 !important;
+  box-shadow: 0 7px 20px rgba(70,55,100,.035) !important;
+}
+
+/* Normal cards remain crisp white so they separate gently from the canvas. */
+html[data-theme="light"] :is(
+  .card, .cardx, .simple-product-card, .product-card-rich,
+  .pricing-card, .contact-card, .auth-card, .cart-panel, .cart-summary,
+  .story-panel, .turnaround-panel, .buying-guide, .accordion-item,
+  .modal-content, .bg-surface, .float-card
+),
+html:not([data-theme="dark"]) :is(
+  .card, .cardx, .simple-product-card, .product-card-rich,
+  .pricing-card, .contact-card, .auth-card, .cart-panel, .cart-summary,
+  .story-panel, .turnaround-panel, .buying-guide, .accordion-item,
+  .modal-content, .bg-surface, .float-card
+) {
+  background-color: rgba(255,255,255,.97) !important;
+  border-color: #e2ddeb !important;
+  box-shadow: 0 14px 38px rgba(58,45,88,.07) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Keep headings/subtext readable against the pale screenshot-style canvas. */
+html[data-theme="light"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.page-title,.price,.stat),
+html:not([data-theme="dark"]) main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.page-title,.price,.stat) {
+  color: #181225 !important;
+  -webkit-text-fill-color: #181225 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+html[data-theme="light"] main :is(p,li,label,small,.small,.lead,.text-muted,.section-subtitle,.product-section-subtitle),
+html:not([data-theme="dark"]) main :is(p,li,label,small,.small,.lead,.text-muted,.section-subtitle,.product-section-subtitle) {
+  color: #625b6e !important;
+  -webkit-text-fill-color: #625b6e !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Clean form surfaces to match the white reference cards/pills. */
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input),
+html:not([data-theme="dark"]) :is(.form-control,.form-select,textarea,input) {
+  background: #ffffff !important;
+  color: #261e30 !important;
+  border-color: #ddd7e7 !important;
+}
+
+/* Intentionally dark promotional panels remain dark; only page backgrounds change. */
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review),
+html:not([data-theme="dark"]) main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) {
+  background: linear-gradient(135deg,#10284a,#1c3f70) !important;
+}
+
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review)
+:is(h1,h2,h3,h4,h5,h6,.section-title,strong,b,p,.lead,.text-muted,small,.small),
+html:not([data-theme="dark"]) main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review)
+:is(h1,h2,h3,h4,h5,h6,.section-title,strong,b,p,.lead,.text-muted,small,.small) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (max-width: 991.98px) {
+  html[data-theme="light"] body,
+  html:not([data-theme="dark"]) body {
+    background-attachment: scroll !important;
+    background-size: auto 100% !important;
+  }
+}
+
+/* ==========================================================
+   FINAL TOP-CONTENT CENTER ALIGNMENT
+   Requested: keep split layouts/images, but center-align the
+   introductory copy wherever it sits on one side of the page.
+   ========================================================== */
+
+/* Home 1 / Home 2 hero copy */
+.hero .row.align-items-center > [class*="col-lg-"]:first-child {
+  text-align: center !important;
+}
+.hero .row.align-items-center > [class*="col-lg-"]:first-child > .d-flex,
+.hero .row.align-items-center > [class*="col-lg-"]:first-child .d-flex.gap-3.flex-wrap {
+  justify-content: center !important;
+}
+.hero .row.align-items-center > [class*="col-lg-"]:first-child > .row {
+  justify-content: center !important;
+  text-align: center !important;
+}
+.hero .row.align-items-center > [class*="col-lg-"]:first-child > .lead,
+.hero .row.align-items-center > [class*="col-lg-"]:first-child > p {
+  max-width: 760px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Cart / checkout top banners */
+.cart-hero .row {
+  justify-content: center !important;
+}
+.cart-hero .row > [class*="col-lg-"]:first-child {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.cart-hero .row > [class*="col-lg-"]:first-child p {
+  max-width: 820px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Split-page intro copy: About + Warranty.
+   Only the heading/intro cluster is centered; forms/cards below
+   keep their practical internal alignment. */
+.page-about main > .section:first-child .row:first-child > .col-lg-6:first-child > .eyebrow,
+.page-about main > .section:first-child .row:first-child > .col-lg-6:first-child > .section-title,
+.page-about main > .section:first-child .row:first-child > .col-lg-6:first-child > .lead,
+.page-warranty main > .section:first-child .row:first-child > .col-lg-6:first-child > .eyebrow,
+.page-warranty main > .section:first-child .row:first-child > .col-lg-6:first-child > .section-title,
+.page-warranty main > .section:first-child .row:first-child > .col-lg-6:first-child > .lead {
+  text-align: center !important;
+}
+.page-about main > .section:first-child .row:first-child > .col-lg-6:first-child > .eyebrow,
+.page-warranty main > .section:first-child .row:first-child > .col-lg-6:first-child > .eyebrow {
+  display: flex !important;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.page-about main > .section:first-child .row:first-child > .col-lg-6:first-child > .lead,
+.page-warranty main > .section:first-child .row:first-child > .col-lg-6:first-child > .lead {
+  max-width: 720px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Service-detail pages: center only the top service intro copy.
+   Technical details, FAQs and cards remain readable/left aligned. */
+body[class*="page-service"] main > .section:first-child .row:first-child > .col-lg-7:first-child > .eyebrow,
+body[class*="page-service"] main > .section:first-child .row:first-child > .col-lg-7:first-child > .section-title,
+body[class*="page-service"] main > .section:first-child .row:first-child > .col-lg-7:first-child > .lead {
+  text-align: center !important;
+}
+body[class*="page-service"] main > .section:first-child .row:first-child > .col-lg-7:first-child > .eyebrow {
+  display: flex !important;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+body[class*="page-service"] main > .section:first-child .row:first-child > .col-lg-7:first-child > .lead {
+  max-width: 780px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Product detail side-copy: center the product intro and CTAs while
+   retaining the feature/support rows as functional content. */
+.product-detail-hero .detail-copy > .eyebrow,
+.product-detail-hero .detail-copy > .section-title,
+.product-detail-hero .detail-copy > .lead,
+.product-detail-hero .detail-copy > .detail-price,
+.product-detail-hero .detail-copy > .small.text-muted {
+  text-align: center !important;
+}
+.product-detail-hero .detail-copy > .eyebrow {
+  display: flex !important;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.product-detail-hero .detail-copy > .lead,
+.product-detail-hero .detail-copy > .small.text-muted {
+  max-width: 720px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.product-detail-hero .purchase-actions {
+  justify-content: center !important;
+}
+
+/* Pricing image-led hero copy */
+.pricing-hero-copy {
+  text-align: center !important;
+}
+.pricing-hero-copy .eyebrow {
+  display: flex !important;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.pricing-hero-copy p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure centering stays clean on tablet/mobile and RTL. */
+@media (max-width: 991.98px) {
+  .hero .row.align-items-center > [class*="col-lg-"]:first-child,
+  .cart-hero .row > [class*="col-lg-"]:first-child,
+  .product-detail-hero .detail-copy,
+  .pricing-hero-copy {
+    text-align: center !important;
+  }
+  .hero .row.align-items-center > [class*="col-lg-"]:first-child > .d-flex,
+  .product-detail-hero .purchase-actions {
+    justify-content: center !important;
+  }
+}

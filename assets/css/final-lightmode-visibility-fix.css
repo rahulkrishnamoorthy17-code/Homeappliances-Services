@@ -1,0 +1,167 @@
+/* VoltHome — final light mode visibility + restore pass (2026-09-10)
+   Loaded last on every page so it safely resolves prior cascade conflicts. */
+
+/* Restore the original/pre-review light-mode background treatment. */
+html:not([data-theme="dark"]) body,
+html[data-theme="light"] body {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.45), rgba(245,243,250,.55)),
+    url('../images/site-purple-background.jpg') center center / cover fixed no-repeat !important;
+  color: #1d1725 !important;
+}
+
+/* Keep dark mode independent. */
+html[data-theme="dark"] body {
+  background:
+    linear-gradient(180deg, rgba(8,5,14,.55), rgba(12,8,20,.65)),
+    url('../images/site-purple-background.jpg') center center / cover fixed no-repeat !important;
+}
+
+/* Light navbar: every control must remain clearly visible. */
+html:not([data-theme="dark"]) .navbar,
+html[data-theme="light"] .navbar {
+  background: rgba(255,255,255,.94) !important;
+  border-bottom: 1px solid #ddd5e7 !important;
+  box-shadow: 0 8px 30px rgba(38,24,55,.07) !important;
+  backdrop-filter: blur(18px) !important;
+}
+html:not([data-theme="dark"]) .navbar .navbar-brand,
+html:not([data-theme="dark"]) .navbar .navbar-brand span,
+html:not([data-theme="dark"]) .navbar .nav-link,
+html[data-theme="light"] .navbar .navbar-brand,
+html[data-theme="light"] .navbar .navbar-brand span,
+html[data-theme="light"] .navbar .nav-link {
+  color: #1d1725 !important;
+  -webkit-text-fill-color: #1d1725 !important;
+  opacity: 1 !important;
+}
+html:not([data-theme="dark"]) .navbar .nav-link:hover,
+html:not([data-theme="dark"]) .navbar .nav-link.active,
+html[data-theme="light"] .navbar .nav-link:hover,
+html[data-theme="light"] .navbar .nav-link.active {
+  color: #7c3aed !important;
+  -webkit-text-fill-color: #7c3aed !important;
+}
+html:not([data-theme="dark"]) .navbar :is(.nav-cart,.btn-soft,.rtl-toggle),
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle) {
+  color: #2e2538 !important;
+  -webkit-text-fill-color: #2e2538 !important;
+  background: #f7f4fb !important;
+  border: 1px solid #d8d0e2 !important;
+  opacity: 1 !important;
+}
+html:not([data-theme="dark"]) .navbar :is(.nav-cart,.btn-soft,.rtl-toggle) i,
+html:not([data-theme="dark"]) .navbar :is(.nav-cart,.btn-soft,.rtl-toggle) span,
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle) i,
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle) span {
+  color: #2e2538 !important;
+  -webkit-text-fill-color: #2e2538 !important;
+  opacity: 1 !important;
+}
+html:not([data-theme="dark"]) .navbar .navbar-toggler,
+html[data-theme="light"] .navbar .navbar-toggler {
+  border-color: #cfc5da !important;
+  background: #fff !important;
+}
+html:not([data-theme="dark"]) .navbar .navbar-toggler-icon,
+html[data-theme="light"] .navbar .navbar-toggler-icon {
+  filter: none !important;
+  opacity: .9 !important;
+}
+
+/* General light-mode readability for normal light surfaces. */
+html:not([data-theme="dark"]) main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat),
+html[data-theme="light"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat) {
+  color: #1a1322 !important;
+  -webkit-text-fill-color: #1a1322 !important;
+  opacity: 1 !important;
+}
+html:not([data-theme="dark"]) main :is(p,li,label,small,.small,.lead,.text-muted,.section-subtitle,.product-section-subtitle),
+html[data-theme="light"] main :is(p,li,label,small,.small,.lead,.text-muted,.section-subtitle,.product-section-subtitle) {
+  color: #5b5165 !important;
+  -webkit-text-fill-color: #5b5165 !important;
+  opacity: 1 !important;
+}
+
+/* Cards and form controls need distinct surfaces in light mode. */
+html:not([data-theme="dark"]) :is(.card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,.contact-card,.auth-card,.cart-panel,.cart-summary,.story-panel,.experience-card,.turnaround-panel,.accordion-item,.modal-content,.bg-surface),
+html[data-theme="light"] :is(.card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,.contact-card,.auth-card,.cart-panel,.cart-summary,.story-panel,.experience-card,.turnaround-panel,.accordion-item,.modal-content,.bg-surface) {
+  color: #21182a !important;
+}
+html:not([data-theme="dark"]) :is(.form-control,.form-select,textarea,input),
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input) {
+  background-color: #fff !important;
+  color: #2b2234 !important;
+  border-color: #d7cee0 !important;
+}
+html:not([data-theme="dark"]) :is(.form-control,.form-select,textarea,input)::placeholder,
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input)::placeholder {
+  color: #7a7084 !important;
+  opacity: 1 !important;
+}
+
+/* CRITICAL: intentionally dark/image CTA surfaces must always use light copy.
+   These selectors are deliberately more specific and loaded last. */
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(h1,h2,h3,h4,h5,h6,.display,.section-title,strong,b,.fw-bold,.fw-semibold),
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(h1,h2,h3,h4,h5,h6,.display,.section-title,strong,b,.fw-bold,.fw-semibold),
+html[data-theme="dark"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(h1,h2,h3,h4,h5,h6,.display,.section-title,strong,b,.fw-bold,.fw-semibold) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.18) !important;
+}
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(p,.lead,.text-muted,.text-white-50,small,.small),
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(p,.lead,.text-muted,.text-white-50,small,.small),
+html[data-theme="dark"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(p,.lead,.text-muted,.text-white-50,small,.small) {
+  color: #edf2fb !important;
+  -webkit-text-fill-color: #edf2fb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Pricing hero is image-backed; ensure a reliable readability overlay. */
+.page-pricing .pricing-hero-review::before {
+  background: linear-gradient(90deg,rgba(7,13,28,.92) 0%,rgba(10,18,36,.78) 48%,rgba(10,18,36,.28) 100%) !important;
+}
+.page-pricing .pricing-hero-copy,
+.page-pricing .pricing-hero-copy * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Footer stays intentionally dark/readable in all themes. */
+.footer :is(h1,h2,h3,h4,h5,h6,strong,b,.footer-brand,.footer-brand span) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.footer :is(p,small,.small,.text-muted,a) {
+  color: #b7c4d5 !important;
+  -webkit-text-fill-color: #b7c4d5 !important;
+  opacity: 1 !important;
+}
+.footer a:hover { color:#fff !important; -webkit-text-fill-color:#fff !important; }
+
+/* Dropdowns/light utility controls. */
+html:not([data-theme="dark"]) .dropdown-menu,
+html[data-theme="light"] .dropdown-menu {
+  background: #fff !important;
+  border-color: #dcd3e6 !important;
+}
+html:not([data-theme="dark"]) .dropdown-item,
+html[data-theme="light"] .dropdown-item {
+  color: #271d31 !important;
+  -webkit-text-fill-color: #271d31 !important;
+}
+
+/* Keep reveal/animation systems from leaving content invisible. */
+.reveal.show,.reveal,[data-reveal],.vh-animate,.vh-animate-left,.vh-animate-right {
+  visibility: visible !important;
+}
+
+@media (max-width: 991.98px) {
+  html:not([data-theme="dark"]) .navbar .navbar-collapse,
+  html[data-theme="light"] .navbar .navbar-collapse {
+    background: rgba(255,255,255,.98) !important;
+  }
+}

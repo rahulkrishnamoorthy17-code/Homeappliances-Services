@@ -1,0 +1,160 @@
+
+/* ============================================================
+   VOLTHOME — LIGHT MODE BACKGROUND DARKER OVERLAY FINAL
+   Purpose: make the light-mode page background noticeably darker
+   while keeping it unmistakably LIGHT MODE.
+   Do not alter dark mode, functionality, routing, or responsiveness.
+   ============================================================ */
+
+html[data-theme="light"] {
+  --vh-light-canvas: #dfe1ec !important;
+  --vh-light-canvas-2: #e6e7f1 !important;
+  --vh-light-surface: #f5f4f8 !important;
+  --vh-light-text: #18131f !important;
+  --vh-light-muted: #514a59 !important;
+}
+
+/* GLOBAL PAGE BACKGROUND:
+   Deliberately darker than the previous pale lavender version. */
+html[data-theme="light"] body {
+  background-color: #dfe1ec !important;
+  background-image:
+    linear-gradient(rgba(171,174,190,.24), rgba(171,174,190,.24)),
+    radial-gradient(ellipse 58% 38% at 12% 6%, rgba(136,106,190,.12), transparent 72%),
+    radial-gradient(ellipse 54% 36% at 90% 8%, rgba(173,125,190,.10), transparent 72%),
+    linear-gradient(180deg, #e8e8f0 0%, #dde0ea 46%, #d8dbe6 74%, #e0e2eb 100%) !important;
+  background-attachment: fixed !important;
+  color: #18131f !important;
+}
+
+/* Remove old pseudo overlays that can fight this final background. */
+html[data-theme="light"] body::before,
+html[data-theme="light"] body::after {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+}
+
+/* Do NOT let old background images or translucent white sheets wash out the page. */
+html[data-theme="light"] :is(main,.site-main,.page-main,.hero,.section,.section-sm,.product-detail-hero,.auth-wrap) {
+  background-image: none !important;
+}
+
+/* General homepage sections get a darker cool-grey/lavender tint,
+   instead of near-white / washed-out backgrounds. */
+html[data-theme="light"] .page-index main > section:not(.brand-strip):not(.offer) {
+  background-color: rgba(222,224,235,.72) !important;
+}
+
+/* Featured products area specifically — visibly darker than before. */
+html[data-theme="light"] .page-index .home-products-simple {
+  background:
+    linear-gradient(rgba(176,179,196,.18), rgba(176,179,196,.18)),
+    linear-gradient(180deg, #e1e3ee 0%, #d9dce8 100%) !important;
+}
+
+/* Brand strip / navbar remain light, but not pure white. */
+html[data-theme="light"] .navbar,
+html[data-theme="light"] .navbar-premium-animated {
+  background: linear-gradient(90deg, #ebe7f0 0%, #f1eef4 50%, #ece7ef 100%) !important;
+  border-bottom: 1px solid rgba(55,48,70,.16) !important;
+  box-shadow: 0 7px 24px rgba(42,35,55,.09) !important;
+}
+
+html[data-theme="light"] .brand-strip {
+  background: #ebeaf0 !important;
+  border-color: #d2cfda !important;
+}
+
+html[data-theme="light"] .brand-pill {
+  background: #f4f2f6 !important;
+  color: #413a49 !important;
+  border-color: #cec9d6 !important;
+}
+
+/* Cards stay lighter than the page so hierarchy is preserved,
+   but avoid stark pure-white slabs. */
+html[data-theme="light"] :is(
+  .simple-product-card,
+  .card,.cardx,.pricing-card,.contact-card,.story-panel,
+  .experience-card,.buying-guide,.turnaround-panel,
+  .accordion-item,.auth-card,.cart-panel,.cart-summary,.float-card
+) {
+  background: rgba(242,241,246,.98) !important;
+  border-color: #cbc7d2 !important;
+  box-shadow: 0 14px 34px rgba(35,30,45,.10) !important;
+}
+
+/* Stronger text contrast on the darker light-mode canvas. */
+html[data-theme="light"] main :is(h1,h2,h3,h4,h5,h6,.display,.section-title,.price,.stat) {
+  color: #17121e !important;
+  -webkit-text-fill-color: #17121e !important;
+  opacity: 1 !important;
+}
+
+html[data-theme="light"] main :is(p,li,label,small,.lead,.text-muted,.section-subtitle,.product-section-subtitle) {
+  color: #4f4857 !important;
+  -webkit-text-fill-color: #4f4857 !important;
+  opacity: 1 !important;
+}
+
+/* Navbar controls/icons remain clearly visible. */
+html[data-theme="light"] .navbar :is(.navbar-brand,.nav-link,.nav-auth-link) {
+  color: #1b1621 !important;
+  -webkit-text-fill-color: #1b1621 !important;
+}
+
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle,.btn-outline-secondary) {
+  background: #efedf2 !important;
+  color: #26202d !important;
+  border-color: #c8c3cf !important;
+}
+
+html[data-theme="light"] .navbar :is(.nav-cart,.btn-soft,.rtl-toggle,.btn-outline-secondary) :is(i,span,svg) {
+  color: #26202d !important;
+  -webkit-text-fill-color: #26202d !important;
+  opacity: 1 !important;
+}
+
+/* Keep dropdown readable. */
+html[data-theme="light"] .navbar .dropdown-menu {
+  background: #f1eff4 !important;
+  border-color: #c9c4d0 !important;
+}
+
+html[data-theme="light"] .navbar .dropdown-item {
+  color: #211a28 !important;
+  -webkit-text-fill-color: #211a28 !important;
+}
+
+/* Deliberately dark CTA panels stay dark with white text. */
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) {
+  background: linear-gradient(135deg,#10284a,#1b3e6e) !important;
+}
+
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review)
+:is(h1,h2,h3,h4,h5,h6,.section-title,strong,b) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+html[data-theme="light"] main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review)
+:is(p,.lead,.text-muted,small,.small) {
+  color: #edf2fb !important;
+  -webkit-text-fill-color: #edf2fb !important;
+  opacity: 1 !important;
+}
+
+/* Forms */
+html[data-theme="light"] :is(.form-control,.form-select,textarea,input) {
+  background: #f1eff4 !important;
+  color: #211a28 !important;
+  border-color: #c7c2cd !important;
+}
+
+@media (max-width: 991.98px) {
+  html[data-theme="light"] body {
+    background-attachment: scroll !important;
+  }
+}

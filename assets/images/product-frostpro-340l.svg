@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef4fb"/><stop offset="1" stop-color="#dce7f2"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e8edf3"/><stop offset=".45" stop-color="#fdfefe"/><stop offset="1" stop-color="#b7c0ca"/></linearGradient>
+ <linearGradient id="darkmetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1018"/><stop offset=".45" stop-color="#232b36"/><stop offset="1" stop-color="#05070b"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55a7ff"/><stop offset="1" stop-color="#1766e6"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="28" stdDeviation="25" flood-color="#000" flood-opacity=".35"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg)"/>
+<circle cx="1000" cy="130" r="220" fill="#3d7dff" opacity=".14" filter="url(#soft)"/>
+<circle cx="200" cy="780" r="260" fill="#70cfff" opacity=".10" filter="url(#soft)"/>
+<ellipse cx="600" cy="785" rx="260" ry="35" fill="#000" opacity=".25"/><g filter="url(#shadow)" transform="translate(420,115)"><rect width="360" height="625" rx="38" fill="url(#metal)"/><rect x="24" y="25" width="312" height="330" rx="24" fill="#d9e0e7" opacity=".38"/><line x1="22" y1="390" x2="338" y2="390" stroke="#8c98a5" stroke-width="3"/><rect x="304" y="90" width="9" height="210" rx="5" fill="#8c98a5"/><rect x="34" y="48" width="120" height="55" rx="12" fill="#121923"/><text x="94" y="83" text-anchor="middle" font-family="Arial" font-size="23" fill="#79c1ff">04°C</text></g></svg>

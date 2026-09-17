@@ -1,0 +1,193 @@
+/* ============================================================
+   VOLTHOME — FINAL LIGHT-MODE CONTRAST PASS
+   Client review fix: Home experience cards, Home 2 CTA,
+   Services CTA, Warranty CTA + similar containers.
+   IMPORTANT: This file is intentionally loaded LAST.
+   Dark mode is not restyled here.
+   ============================================================ */
+
+/* ---------- LIGHT MODE: normal/light containers ---------- */
+html[data-theme="light"] body main :is(
+  .card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,
+  .contact-card,.cart-panel,.cart-summary,.story-panel,.turnaround-panel,
+  .buying-guide,.accordion-item,.modal-content,.bg-surface,.float-card
+),
+html:not([data-theme="dark"]) body main :is(
+  .card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,
+  .contact-card,.cart-panel,.cart-summary,.story-panel,.turnaround-panel,
+  .buying-guide,.accordion-item,.modal-content,.bg-surface,.float-card
+) {
+  color:#20172a !important;
+}
+
+html[data-theme="light"] body main :is(
+  .card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,
+  .contact-card,.cart-panel,.cart-summary,.story-panel,.turnaround-panel,
+  .buying-guide,.accordion-item,.modal-content,.bg-surface,.float-card
+) :is(h1,h2,h3,h4,h5,h6,.section-title,.display,strong,b,.fw-bold,.fw-semibold),
+html:not([data-theme="dark"]) body main :is(
+  .card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,
+  .contact-card,.cart-panel,.cart-summary,.story-panel,.turnaround-panel,
+  .buying-guide,.accordion-item,.modal-content,.bg-surface,.float-card
+) :is(h1,h2,h3,h4,h5,h6,.section-title,.display,strong,b,.fw-bold,.fw-semibold) {
+  color:#181225 !important;
+  -webkit-text-fill-color:#181225 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:none !important;
+}
+
+html[data-theme="light"] body main :is(
+  .card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,
+  .contact-card,.cart-panel,.cart-summary,.story-panel,.turnaround-panel,
+  .buying-guide,.accordion-item,.modal-content,.bg-surface,.float-card
+) :is(p,li,label,small,.small,.lead,.text-muted,.section-subtitle,.product-section-subtitle),
+html:not([data-theme="dark"]) body main :is(
+  .card,.cardx,.simple-product-card,.product-card-rich,.pricing-card,
+  .contact-card,.cart-panel,.cart-summary,.story-panel,.turnaround-panel,
+  .buying-guide,.accordion-item,.modal-content,.bg-surface,.float-card
+) :is(p,li,label,small,.small,.lead,.text-muted,.section-subtitle,.product-section-subtitle) {
+  color:#51485c !important;
+  -webkit-text-fill-color:#51485c !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:none !important;
+}
+
+/* ---------- HOME 1: Volt/experience section ----------
+   Keep the premium alternating-card concept, but force readable text. */
+html[data-theme="light"] body.page-index .experience-card:nth-child(1),
+html[data-theme="light"] body.page-index .experience-card:nth-child(4),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(1),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(4) {
+  background:linear-gradient(145deg,#10233f 0%,#173b68 100%) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+}
+html[data-theme="light"] body.page-index .experience-card:nth-child(1) :is(h1,h2,h3,h4,h5,h6,strong,b),
+html[data-theme="light"] body.page-index .experience-card:nth-child(4) :is(h1,h2,h3,h4,h5,h6,strong,b),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(1) :is(h1,h2,h3,h4,h5,h6,strong,b),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(4) :is(h1,h2,h3,h4,h5,h6,strong,b) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html[data-theme="light"] body.page-index .experience-card:nth-child(1) p,
+html[data-theme="light"] body.page-index .experience-card:nth-child(4) p,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(1) p,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(4) p {
+  color:#edf3ff !important;
+  -webkit-text-fill-color:#edf3ff !important;
+  opacity:1 !important;
+}
+html[data-theme="light"] body.page-index .experience-card:nth-child(1) > span,
+html[data-theme="light"] body.page-index .experience-card:nth-child(4) > span,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(1) > span,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(4) > span {
+  color:#f6d480 !important;
+  -webkit-text-fill-color:#f6d480 !important;
+  opacity:1 !important;
+}
+
+html[data-theme="light"] body.page-index .experience-card:nth-child(2),
+html[data-theme="light"] body.page-index .experience-card:nth-child(3),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(2),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(3) {
+  background:#ffffff !important;
+  border:1px solid #ded7e8 !important;
+  box-shadow:0 14px 36px rgba(55,42,82,.08) !important;
+}
+html[data-theme="light"] body.page-index .experience-card:nth-child(2) :is(h1,h2,h3,h4,h5,h6,strong,b),
+html[data-theme="light"] body.page-index .experience-card:nth-child(3) :is(h1,h2,h3,h4,h5,h6,strong,b),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(2) :is(h1,h2,h3,h4,h5,h6,strong,b),
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(3) :is(h1,h2,h3,h4,h5,h6,strong,b) {
+  color:#181225 !important;
+  -webkit-text-fill-color:#181225 !important;
+  opacity:1 !important;
+}
+html[data-theme="light"] body.page-index .experience-card:nth-child(2) p,
+html[data-theme="light"] body.page-index .experience-card:nth-child(3) p,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(2) p,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(3) p {
+  color:#4f4759 !important;
+  -webkit-text-fill-color:#4f4759 !important;
+  opacity:1 !important;
+}
+html[data-theme="light"] body.page-index .experience-card:nth-child(2) > span,
+html[data-theme="light"] body.page-index .experience-card:nth-child(3) > span,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(2) > span,
+html:not([data-theme="dark"]) body.page-index .experience-card:nth-child(3) > span {
+  color:#7040b8 !important;
+  -webkit-text-fill-color:#7040b8 !important;
+  opacity:1 !important;
+}
+
+/* ---------- DARK / IMAGE-BACKED PANELS IN LIGHT MODE ----------
+   Home 2 last section, Services CTA, Warranty note and all same UI types. */
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review),
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) {
+  background:linear-gradient(135deg,#10284a 0%,#173967 55%,#214b82 100%) !important;
+  color:#ffffff !important;
+}
+
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(
+  h1,h2,h3,h4,h5,h6,.display,.section-title,strong,b,.fw-bold,.fw-semibold
+),
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(
+  h1,h2,h3,h4,h5,h6,.display,.section-title,strong,b,.fw-bold,.fw-semibold
+) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.22) !important;
+}
+
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(
+  p,.lead,.text-muted,.text-white-50,small,.small
+),
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) :is(
+  p,.lead,.text-muted,.text-white-50,small,.small
+) {
+  color:#eef4ff !important;
+  -webkit-text-fill-color:#eef4ff !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:0 1px 1px rgba(0,0,0,.12) !important;
+}
+
+/* Eyebrows/pills that sit inside the dark CTA blocks. */
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) .eyebrow,
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) .eyebrow {
+  color:#f3f6ff !important;
+  -webkit-text-fill-color:#f3f6ff !important;
+  background:rgba(255,255,255,.12) !important;
+  border-color:rgba(255,255,255,.24) !important;
+}
+
+/* Buttons keep their intended foreground colors. */
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) .btn-brand,
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) .btn-brand {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) .btn-light,
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.pricing-hero-review) .btn-light {
+  color:#172033 !important;
+  -webkit-text-fill-color:#172033 !important;
+  background:#ffffff !important;
+  border-color:#ffffff !important;
+}
+
+/* Warranty icon remains highlighted against navy. */
+html[data-theme="light"] body main .warranty-note > i,
+html:not([data-theme="dark"]) body main .warranty-note > i {
+  color:#f4c95d !important;
+  -webkit-text-fill-color:#f4c95d !important;
+  opacity:1 !important;
+}
+
+/* Safety net: content should never be hidden by reveal/opacity rules. */
+html[data-theme="light"] body main :is(.offer,.premium-cta,.warranty-note,.experience-card) *,
+html:not([data-theme="dark"]) body main :is(.offer,.premium-cta,.warranty-note,.experience-card) * {
+  visibility:visible !important;
+}
